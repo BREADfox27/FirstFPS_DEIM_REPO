@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        textHealth.text = health.ToString();
-        textAmmo.text = gunAmmo.ToString();
+        textHealth.text = "Health: " + health.ToString();
+        textAmmo.text = "Ammo: " + gunAmmo.ToString();
     }
 
     void Update()
