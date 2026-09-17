@@ -48,8 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicSource: {fileID: 5787989436875745998}
   sfxSource: {fileID: 1046962081063910260}
-  musicList: []
-  sfxList: []
+  musicList:
+  - {fileID: 8300000, guid: 79904e059ecf9a742af8600c47a2476b, type: 3}
+  sfxList:
+  - {fileID: 8300000, guid: d9419ba0bfac1e84a95418ac5851caf6, type: 3}
 --- !u!1 &8368795542033153111
 GameObject:
   m_ObjectHideFlags: 0

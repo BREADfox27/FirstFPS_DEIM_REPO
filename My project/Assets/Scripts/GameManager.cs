@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public int gunAmmo = 50;
     public TextMeshProUGUI textAmmo;
 
+    public GameObject player;
+    public GameObject respawnPoint;
+
     private void Awake()
     {
         Instance = this;
@@ -24,5 +27,23 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void TakeDamage()
+    {
+        health -= 1;
+        textHealth.text = "Health: " + health.ToString();
+
+        if (health <= 0)
+        {
+            Respawn();
+        }
+    }
+
+    public void Respawn()
+    {
+        player.transform.position = respawnPoint.transform.position;
+        health = 10;
+        textHealth.text = "Health: " + health.ToString();
     }
 }
