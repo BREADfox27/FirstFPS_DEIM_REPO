@@ -6847,6 +6847,7 @@ MonoBehaviour:
   textAmmo: {fileID: 1799143755}
   player: {fileID: 1439177510}
   respawnPoint: {fileID: 724267011}
+  playerCS: {fileID: 1439177522}
   gun: {fileID: 633592989}
   bullet: {fileID: 7738641364431136850, guid: ae747ad53499ab246bf37521034cb0e3, type: 3}
   bulletSpawn: {fileID: 1820164965}
@@ -7527,6 +7528,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72facd21658b5d4abeb2b81600adc10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractions
+--- !u!114 &1439177522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 453084650579209848, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+  m_PrefabInstance: {fileID: 1786671449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439177510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1462336712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8953,6 +8965,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 453084650579209848, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: RotationSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 453084650579209848, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: GroundLayers.m_Bits
       value: 65536

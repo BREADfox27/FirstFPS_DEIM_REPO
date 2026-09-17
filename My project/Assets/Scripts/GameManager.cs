@@ -1,10 +1,10 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
+    
     [Header("Game Data")]
     public int health = 10;
     public TextMeshProUGUI textHealth;
@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     public float shotForce = 1500f;
     public float shotRate = 0.25f;
     public float recoilForce = 2f;
-    public float swayForce = 3f;
 
     private float shotRateTime = 0;
 
