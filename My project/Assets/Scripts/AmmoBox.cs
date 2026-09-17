@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class AmmoBox : MonoBehaviour
 {
-    public int newBullets = 10;
-
     [Header("Rotation")]
     public float speedX;
     public float speedY;
@@ -24,14 +22,6 @@ public class AmmoBox : MonoBehaviour
     {
         RotateObject();
         LevitateObj();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            GameManager.Instance.gunAmmo += newBullets;
-        }
     }
 
     void RotateObject()
