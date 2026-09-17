@@ -42,7 +42,10 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
+        player.GetComponentInChildren<CharacterController>().enabled = false;
         player.transform.position = respawnPoint.transform.position;
+        player.transform.rotation = respawnPoint.transform.rotation;
+        player.GetComponentInChildren<CharacterController>().enabled = true;
         health = 10;
         textHealth.text = "Health: " + health.ToString();
     }
