@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RandomInstance : MonoBehaviour
+public class RandomObjPosition : MonoBehaviour
 {
     [Header("Position")]
     public float minX;
@@ -31,15 +31,5 @@ public class RandomInstance : MonoBehaviour
         Vector3 randomPosition = new Vector3(randomX, randomY, randomZ);
 
         gameObject.transform.position = randomPosition;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Bullet"))
-        {
-            GameManager.Instance.points += 1;
-            GameManager.Instance.textPoints.text = "Points: " + GameManager.Instance.points.ToString();
-            Destroy(gameObject);
-        }
     }
 }

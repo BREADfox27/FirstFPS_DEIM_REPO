@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1149680965776915635}
   - component: {fileID: 2324471250212447243}
   - component: {fileID: -1905484426938695146}
+  - component: {fileID: 6197448038839707368}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -140,3 +141,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6197448038839707368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738641364431136850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72db0b9f4d6a95c41a0c9878217ffd54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullet

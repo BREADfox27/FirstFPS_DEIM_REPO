@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI textHealth;
     public int gunAmmo = 50;
     public TextMeshProUGUI textAmmo;
-    public int points = 0;
+    public float points = 0;
     public TextMeshProUGUI textPoints;
     public bool playerInRange = false;
 
