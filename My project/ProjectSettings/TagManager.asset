@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - AmmoBox
   - EnemyRange
+  - Bullet
+  - AimShpere
   layers:
   - Default
   - TransparentFX

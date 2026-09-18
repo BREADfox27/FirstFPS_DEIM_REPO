@@ -15,7 +15,7 @@ public class RandomInstance : MonoBehaviour
     {
         RandomPosition();
     }
-
+    
     void Update()
     {
         
@@ -30,5 +30,13 @@ public class RandomInstance : MonoBehaviour
         Vector3 randomPosition = new Vector3(randomX, randomY, randomZ);
 
         gameObject.transform.position = randomPosition;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
