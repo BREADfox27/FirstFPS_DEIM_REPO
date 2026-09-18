@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && gunAmmo > 0)
+        if (Input.GetMouseButtonDown(0) && gunAmmo > 0 && playerInRange == false)
         {
             Shoot();
         }
