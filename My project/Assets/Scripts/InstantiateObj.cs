@@ -19,12 +19,14 @@ public class InstantiateObj : MonoBehaviour
     {
         if (currentObj == null)
         {
-            if (Time.time > objRateTime)
+            objRateTime += Time.deltaTime;
+            
+            if (objRateTime >= objRate)
             {
                 GameObject newObj = Instantiate(objects[0], spawnObj.position, spawnObj.rotation);
                 currentObj = newObj;
 
-                objRateTime = Time.time + objRate;
+                objRateTime = 0;
             }
         }
     }

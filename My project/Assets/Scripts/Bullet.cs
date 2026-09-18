@@ -21,12 +21,5 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             Destroy(other.gameObject);
         }
-
-        if (other.gameObject.CompareTag("MinusPoints"))
-        {
-            GameManager.Instance.points--;
-            GameManager.Instance.textPoints.text = "Points: " + GameManager.Instance.points.ToString();
-            Destroy(gameObject);
-        }
     }
 }

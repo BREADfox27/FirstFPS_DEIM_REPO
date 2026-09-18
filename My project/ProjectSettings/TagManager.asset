@@ -10,7 +10,6 @@ TagManager:
   - EnemyRange
   - Bullet
   - AimShpere
-  - MinusPoints
   layers:
   - Default
   - TransparentFX
