@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RandomInstance : MonoBehaviour
 {
+    [Header("Position")]
     public float minX;
     public float maxX;
 
@@ -36,6 +37,8 @@ public class RandomInstance : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
+            GameManager.Instance.points += 1;
+            GameManager.Instance.textPoints.text = "Points: " + GameManager.Instance.points.ToString();
             Destroy(gameObject);
         }
     }
