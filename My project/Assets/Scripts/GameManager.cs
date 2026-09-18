@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI textHealth;
     public int gunAmmo = 50;
     public TextMeshProUGUI textAmmo;
+    public bool playerInRange = false;
 
     [Header("Player")]
     public GameObject player;

@@ -28,5 +28,18 @@ public class PlayerInteractions : MonoBehaviour
             GameManager.Instance.textAmmo.text = "Ammo: " + GameManager.Instance.gunAmmo.ToString();
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.CompareTag("EnemyRange"))
+        {
+            GameManager.Instance.playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("EnemyRange"))
+        {
+            GameManager.Instance.playerInRange = false;
+        }
     }
 }
