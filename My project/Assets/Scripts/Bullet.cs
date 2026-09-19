@@ -22,5 +22,14 @@ public class Bullet : MonoBehaviour
             Destroy(other.gameObject);
             AudioManager.Instance.PlaySFX(3);
         }
+
+        if (other.gameObject.CompareTag("Enemy") && GameManager.Instance.playerInRange == true)
+        {
+            GameManager.Instance.points++;
+            GameManager.Instance.textPoints.text = "Points: " + GameManager.Instance.points.ToString();
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+            AudioManager.Instance.PlaySFX(3);
+        }
     }
 }
