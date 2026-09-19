@@ -5,6 +5,7 @@ public class MainSceneBtnManager : MonoBehaviour
 {
     public StarterAssetsInputs starterAssets;
     public FirstPersonController firstPersonController;
+    public FadeInOut fade;
 
     [Header("Pause")]
     public GameObject pausePanel;
@@ -12,6 +13,11 @@ public class MainSceneBtnManager : MonoBehaviour
     public GameObject optionsPanel;
 
     public GameObject currentPanel = null;
+
+    private void Start()
+    {
+        fade = FindAnyObjectByType<FadeInOut>();
+    }
 
     private void Update()
     {
@@ -79,6 +85,6 @@ public class MainSceneBtnManager : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX(7);
         Debug.Log("You closed the game.");
-        Application.Quit();
+        fade.CloseGame();
     }
 }

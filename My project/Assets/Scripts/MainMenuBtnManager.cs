@@ -1,14 +1,19 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenuBtnManager : MonoBehaviour
 {
     public GameObject optionsPanel;
+    public FadeInOut fade;
+
+    private void Start()
+    {
+        fade = FindAnyObjectByType<FadeInOut>();
+    }
 
     public void Play()
     {
         AudioManager.Instance.PlaySFX(7);
-        SceneManager.LoadScene("MainScene");
+        fade.LoadNextScene();
     }
 
     public void Options()
@@ -27,6 +32,6 @@ public class MainMenuBtnManager : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX(7);
         Debug.Log("You closed the game.");
-        Application.Quit();
+        fade.CloseGame();
     }
 }
