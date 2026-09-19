@@ -52,6 +52,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 79904e059ecf9a742af8600c47a2476b, type: 3}
   sfxList:
   - {fileID: 8300000, guid: d9419ba0bfac1e84a95418ac5851caf6, type: 3}
+  - {fileID: 8300000, guid: 78419f98379502c4dbfb2774bc94e7c1, type: 3}
+  - {fileID: 8300000, guid: a245ee5d75348c84a89ffb7992f1dc82, type: 3}
+  - {fileID: 8300000, guid: 8401456349c492a489ed90469e317e43, type: 3}
+  - {fileID: 8300000, guid: c48a972d3d024c2408a3331750786a29, type: 3}
 --- !u!1 &8368795542033153111
 GameObject:
   m_ObjectHideFlags: 0

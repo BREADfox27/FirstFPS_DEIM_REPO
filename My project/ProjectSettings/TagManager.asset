@@ -10,6 +10,8 @@ TagManager:
   - EnemyRange
   - Bullet
   - AimShpere
+  - Door
+  - HealBox
   layers:
   - Default
   - TransparentFX

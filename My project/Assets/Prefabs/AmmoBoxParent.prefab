@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7898685256380096573}
   - component: {fileID: 376150593393560033}
   - component: {fileID: 5078877069747334259}
-  - component: {fileID: 8611690716734314884}
+  - component: {fileID: 1052973058158490651}
   m_Layer: 0
   m_Name: AmmoBox
   m_TagString: Untagged
@@ -91,7 +91,7 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8611690716734314884
+--- !u!114 &1052973058158490651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 786f209074a87da4486905f259aa1360, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AmmoBox
+  m_EditorClassIdentifier: Assembly-CSharp::LevitateObj
   speedX: 0
   speedY: 10
   speedZ: 0

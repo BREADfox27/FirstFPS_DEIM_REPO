@@ -20,6 +20,7 @@ public class Bullet : MonoBehaviour
             GameManager.Instance.textPoints.text = "Points: " + GameManager.Instance.points.ToString();
             Destroy(gameObject);
             Destroy(other.gameObject);
+            AudioManager.Instance.PlaySFX(3);
         }
     }
 }
