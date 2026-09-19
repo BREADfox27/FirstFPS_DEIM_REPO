@@ -42,7 +42,14 @@ public class GameManager : MonoBehaviour
     {
         textHealth.text = "Health: " + health.ToString();
         textAmmo.text = "Ammo: " + gunAmmo.ToString();
+
+        if (PlayerPrefs.HasKey("PlayerPoints"))
+        {
+            points = PlayerPrefs.GetFloat("PlayerPoints");
+        }
+
         textPoints.text = "Points: " + points.ToString();
+
     }
 
     void Update()
@@ -107,6 +114,12 @@ public class GameManager : MonoBehaviour
     {
         gun.transform.Rotate(-recoilForce, 0f, 0f);
         gun.transform.position -= gun.transform.forward * (recoilForce / 50f);
+    }
+
+    public void SaveScore()
+    {
+        PlayerPrefs.SetFloat("PlayerPoints", points);
+        PlayerPrefs.Save();
     }
 
     public IEnumerator PanelFade()

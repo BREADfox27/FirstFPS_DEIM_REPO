@@ -18,8 +18,11 @@ public class Bullet : MonoBehaviour
         {
             GameManager.Instance.points++;
             GameManager.Instance.textPoints.text = "Points: " + GameManager.Instance.points.ToString();
+            GameManager.Instance.SaveScore();
+
             Destroy(gameObject);
             Destroy(other.gameObject);
+
             AudioManager.Instance.PlaySFX(3);
         }
 
@@ -27,8 +30,11 @@ public class Bullet : MonoBehaviour
         {
             GameManager.Instance.points++;
             GameManager.Instance.textPoints.text = "Points: " + GameManager.Instance.points.ToString();
+            GameManager.Instance.SaveScore();
+
             Destroy(gameObject);
             Destroy(other.gameObject);
+
             AudioManager.Instance.PlaySFX(3);
         }
     }
