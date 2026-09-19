@@ -9,7 +9,11 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        
+        if (gameObject.transform.position.x < -10 || gameObject.transform.position.x > 23)
+        {
+            Destroy(gameObject);
+            GameManager.Instance.CalculateAccuracy();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -17,8 +21,10 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("AimShpere"))
         {
             GameManager.Instance.points++;
+            GameManager.Instance.shotsAccurate++;
             GameManager.Instance.textPoints.text = "Points: " + GameManager.Instance.points.ToString();
             GameManager.Instance.SaveScore();
+            GameManager.Instance.CalculateAccuracy();
 
             Destroy(gameObject);
             Destroy(other.gameObject);
@@ -29,8 +35,10 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy") && GameManager.Instance.playerInRange == true)
         {
             GameManager.Instance.points++;
+            GameManager.Instance.shotsAccurate++;
             GameManager.Instance.textPoints.text = "Points: " + GameManager.Instance.points.ToString();
             GameManager.Instance.SaveScore();
+            GameManager.Instance.CalculateAccuracy();
 
             Destroy(gameObject);
             Destroy(other.gameObject);

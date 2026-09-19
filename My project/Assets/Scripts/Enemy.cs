@@ -23,14 +23,8 @@ public class Enemy : MonoBehaviour
     {
         if (GameManager.Instance.playerInRange == true)
         {
-            Debug.Log("Player is in range.");
             shotParent.GetComponent<Transform>().transform.LookAt(player);
             Shoot();
-        }
-
-        else
-        {
-            Debug.Log("Player is not in range.");
         }
     }
 

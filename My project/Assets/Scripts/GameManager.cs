@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
 
     private float shotRateTime = 0;
 
+    public float shotsMade = 0;
+    public float shotsAccurate = 0;
+    public float accurateRatio;
+    public TextMeshProUGUI textAccurateRatio;
+
     private void Awake()
     {
         Instance = this;
@@ -102,12 +107,19 @@ public class GameManager : MonoBehaviour
 
                 gunAmmo--;
                 textAmmo.text = "Ammo: " + gunAmmo.ToString();
+                shotsMade++;
 
                 shotRateTime = Time.time + shotRate;
 
                 Destroy(newBullet, 3);
             }
         }
+    }
+
+    public void CalculateAccuracy()
+    {
+        accurateRatio = (shotsAccurate / shotsMade) * 100;
+        textAccurateRatio.text = "Accuracy: " + accurateRatio.ToString() + " %";
     }
 
     private void AddRecoil()

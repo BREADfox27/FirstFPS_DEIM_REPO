@@ -12,6 +12,9 @@ TagManager:
   - AimShpere
   - Door
   - HealBox
+  - Wall
+  - Ceiling
+  - Ground
   layers:
   - Default
   - TransparentFX
