@@ -36,6 +36,7 @@ public class MainSceneBtnManager : MonoBehaviour
 
     public void Resume()
     {
+        AudioManager.Instance.PlaySFX(7);
         pausePanel.SetActive(false);
         currentPanel = null;
         Cursor.lockState = CursorLockMode.Locked;
@@ -60,6 +61,7 @@ public class MainSceneBtnManager : MonoBehaviour
 
     public void Options()
     {
+        AudioManager.Instance.PlaySFX(7);
         currentPanel.SetActive(false);
         optionsPanel.SetActive(true);
         currentPanel = optionsPanel;
@@ -67,6 +69,7 @@ public class MainSceneBtnManager : MonoBehaviour
 
     public void Close()
     {
+        AudioManager.Instance.PlaySFX(7);
         currentPanel.SetActive(false);
         currentPanel = menuPanel;
         currentPanel.SetActive(true);
@@ -74,6 +77,7 @@ public class MainSceneBtnManager : MonoBehaviour
 
     public void Exit()
     {
+        AudioManager.Instance.PlaySFX(7);
         Debug.Log("You closed the game.");
         Application.Quit();
     }
