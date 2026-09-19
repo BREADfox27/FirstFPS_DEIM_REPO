@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    public int newBullets = 10;
-    public int newHealth = 1;
+    public int newBullets = 25;
+    public int newHealth = 5;
 
     public Animator doorAnimator;
     public float animTime = 0.15f;

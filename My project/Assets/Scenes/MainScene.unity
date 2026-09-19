@@ -11347,8 +11347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72facd21658b5d4abeb2b81600adc10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractions
-  newBullets: 10
-  newHealth: 1
+  newBullets: 25
+  newHealth: 5
   doorAnimator: {fileID: 1389270828}
   animTime: 0.15
 --- !u!114 &1439177520 stripped
