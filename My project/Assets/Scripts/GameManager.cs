@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     {
         health--;
         textHealth.text = "Health: " + health.ToString();
+        AudioManager.Instance.PlaySFX(6);
 
         if (health <= 0)
         {
@@ -69,6 +70,8 @@ public class GameManager : MonoBehaviour
         player.transform.position = respawnPoint.transform.position;
         player.transform.rotation = respawnPoint.transform.rotation;
         player.GetComponent<CharacterController>().enabled = true;
+        AudioManager.Instance.PlaySFX(5);
+        playerInRange = false;
 
         health = 10;
         textHealth.text = "Health: " + health.ToString();
