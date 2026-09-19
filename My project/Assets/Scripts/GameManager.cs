@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
     [Header("Player")]
     public GameObject player;
     public GameObject respawnPoint;
+    public Animator damagePanelAnim;
+    public float damageAnimTime = 0.20f;
 
     [Header("Shoot")]
     public GameObject gun;
@@ -56,6 +59,7 @@ public class GameManager : MonoBehaviour
     {
         health--;
         textHealth.text = "Health: " + health.ToString();
+        StartCoroutine(PanelFade());
         AudioManager.Instance.PlaySFX(6);
 
         if (health <= 0)
@@ -99,5 +103,12 @@ public class GameManager : MonoBehaviour
     {
         gun.transform.Rotate(-recoilForce, 0f, 0f);
         gun.transform.position -= gun.transform.forward * (recoilForce / 50f);
+    }
+
+    public IEnumerator PanelFade()
+    {
+        damagePanelAnim.SetTrigger("StartFade");
+        yield return new WaitForSeconds(damageAnimTime);
+        damagePanelAnim.SetTrigger("EndFade");
     }
 }
