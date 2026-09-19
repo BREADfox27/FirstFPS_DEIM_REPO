@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public float points = 0;
     public TextMeshProUGUI textPoints;
     public bool playerInRange = false;
+    public bool isGamePaused = false;
 
     [Header("Player")]
     public GameObject player;
@@ -83,19 +84,22 @@ public class GameManager : MonoBehaviour
 
     public void Shoot()
     {
-        if (Time.time > shotRateTime)
+        if (isGamePaused == false)
         {
-            GameObject newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
-            newBullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * shotForce);
-            AddRecoil();
-            AudioManager.Instance.PlaySFX(0);
+            if (Time.time > shotRateTime)
+            {
+                GameObject newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+                newBullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * shotForce);
+                AddRecoil();
+                AudioManager.Instance.PlaySFX(0);
 
-            gunAmmo--;
-            textAmmo.text = "Ammo: " + gunAmmo.ToString();
+                gunAmmo--;
+                textAmmo.text = "Ammo: " + gunAmmo.ToString();
 
-            shotRateTime = Time.time + shotRate;
+                shotRateTime = Time.time + shotRate;
 
-            Destroy(newBullet, 3);
+                Destroy(newBullet, 3);
+            }
         }
     }
 
