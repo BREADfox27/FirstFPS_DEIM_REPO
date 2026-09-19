@@ -8,6 +8,10 @@ public class MainSceneBtnManager : MonoBehaviour
 
     [Header("Pause")]
     public GameObject pausePanel;
+    public GameObject menuPanel;
+    public GameObject optionsPanel;
+
+    public GameObject currentPanel = null;
 
     private void Update()
     {
@@ -33,6 +37,7 @@ public class MainSceneBtnManager : MonoBehaviour
     public void Resume()
     {
         pausePanel.SetActive(false);
+        currentPanel = null;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
 
@@ -44,12 +49,27 @@ public class MainSceneBtnManager : MonoBehaviour
     public void Pause()
     {
         pausePanel.SetActive(true);
+        currentPanel = menuPanel;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
 
         firstPersonController.isGamePaused = true;
 
         GameManager.Instance.isGamePaused = true;
+    }
+
+    public void Options()
+    {
+        currentPanel.SetActive(false);
+        optionsPanel.SetActive(true);
+        currentPanel = optionsPanel;
+    }
+
+    public void Close()
+    {
+        currentPanel.SetActive(false);
+        currentPanel = menuPanel;
+        currentPanel.SetActive(true);
     }
 
     public void Exit()
